@@ -144,6 +144,9 @@ these messages.
 - `sortKeys` (optional, default: `true`)
   - If you want the translationManager to sort it's output, both json and console output
 - `jsonOptions` (optional, default: { space: 2, trailingNewline: false })
+- `overrideMessage` (optional, default: `'default'`)
+  - If you want to select what to use for untranslated strings
+  - (`'default'`) for defaultMessage, (`'id'`) for string id, (`''`) for empty string
 - `overridePrinters` (optional, default: {})
   - Here you can specify custom logging methods. If not specified a default printer is used.
   - Possible printers to configure:
