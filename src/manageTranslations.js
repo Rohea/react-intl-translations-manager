@@ -93,7 +93,7 @@ export default ({
       }
     },
 
-    getDefaultMessages: (files) => getDefaultMessages(files, {overrideMessage}),
+    getDefaultMessages: files => getDefaultMessages(files, { overrideMessage }),
 
     outputDuplicateKeys: duplicateIds => {
       if (!detectDuplicateIds) return;

@@ -1,10 +1,10 @@
-export default (files, {overrideMessage = 'default'} = {}) => {
+export default (files, { overrideMessage = 'default' } = {}) => {
   if (!files) throw new Error('Files are required');
 
-  return files.reduce((fileAcc, {descriptors}) => {
+  return files.reduce((fileAcc, { descriptors }) => {
     const duplicateIds = fileAcc.duplicateIds;
     return {
-      messages: descriptors.reduce((descAcc, {id, defaultMessage}) => {
+      messages: descriptors.reduce((descAcc, { id, defaultMessage }) => {
         if (descAcc[id] !== undefined) {
           duplicateIds.push(id);
         }
@@ -21,7 +21,7 @@ export default (files, {overrideMessage = 'default'} = {}) => {
             message = '';
         }
 
-        return {...descAcc, [id]: message};
+        return { ...descAcc, [id]: message };
       }, fileAcc.messages),
       duplicateIds,
     };
