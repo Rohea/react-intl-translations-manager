@@ -3,6 +3,8 @@ import { sync as mkdirpSync } from 'mkdirp';
 import Path from 'path';
 import { yellow, red, green } from 'chalk';
 
+import getDefaultMessages from './getDefaultMessages';
+import getLanguageReport from './getLanguageReport';
 import readFile from './readFile';
 import { header, subheader, footer } from './printer';
 import readMessageFiles from './readMessageFiles';
@@ -127,6 +129,8 @@ export default ({
       const jsonFile = readFile(filePath);
       return jsonFile ? JSON.parse(jsonFile) : undefined;
     },
+
+    getLanguageReport,
 
     reportLanguage: langResults => {
       if (!langResults.report.noTranslationFile && !langResults.report.noWhitelistFile) {
