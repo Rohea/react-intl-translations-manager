@@ -25,6 +25,7 @@ export default ({
   whitelistsDirectory = translationsDirectory,
   languages = [],
   singleMessagesFile = false,
+  overrideMessage = 'default',
   detectDuplicateIds = true,
   sortKeys = true,
   jsonOptions = {},
@@ -91,6 +92,8 @@ export default ({
         });
       }
     },
+
+    getDefaultMessages: (files) => getDefaultMessages(files, {overrideMessage}),
 
     outputDuplicateKeys: duplicateIds => {
       if (!detectDuplicateIds) return;
